@@ -4,6 +4,8 @@ const User = db.User
 const generateToken = require("../services/generate_token")
 const refresh_secret_key = process.env.REFRESH_SECRET_KEY
 
+
+//controller for generating the access_token
 exports.generate_access_token = async (req, res) => {
  
 

@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs")
 const generateToken = require("../services/generate_token")
 
 
-
+//controller for new user registration  
 exports.createUser = async (req, res) => {
     const { name, email, password } = req.body
     try {
@@ -45,7 +45,7 @@ exports.createUser = async (req, res) => {
         creatingUser.refreshToken = refresh_token
         await creatingUser.save()
 
-    
+        res.cookie("refresh_token", refresh_token, { httpOnly: true })
         return res.status(200).json({
             status: true,
             message: "User risgter successfully",
