@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use("/token", Routes)
+app.use("/", Routes)
 
 app.listen(port, () => {
     console.log(`server is running on the ${port}`)
